@@ -1,0 +1,92 @@
+<body>
+@if ((exercises$ | async); as exercises) {
+    
+    @if (exercises!.length > 0) {
+        @for (exercise of exercises; track exercise.name) {
+            
+            <div class="ExerciseInfo" #exerciseBox tabindex="1" >
+                <div id="ex-info">
+                    <h3>{{exercise.name}}</h3>
+                    <img [src]="'../../../images/' + exercise.name + '.jpeg'" alt="">
+                </div>
+                
+                    <div class="setPart">
+                        <div class="setAdder">
+                            <h3>Sets</h3>
+                            <button mat-raised-button (click)="increment(exercise, 'sets')" class="plus" [disabled]="!allowedEdit">
+                                <mat-icon>
+                                    add
+                                </mat-icon>
+                            </button>
+                            <button mat-raised-button (click)="decrement(exercise, 'sets')" class="minus" [disabled]="!allowedEdit">
+                                <mat-icon>
+                                    remove
+                                </mat-icon>
+                            </button>
+                        </div>
+                    <input matInput value="{{exercise.sets}}" readonly>
+                </div>
+                
+
+            
+                <div class="repPart">
+                    <div class="repAdder">
+                        <h3>Reps</h3>
+                        <button mat-raised-button (click)="increment(exercise, 'reps')" class="plus" [disabled]="!allowedEdit">
+                            <mat-icon>
+                                add
+                            </mat-icon>
+                        </button>
+                        <button mat-raised-button (click)="decrement(exercise, 'reps')" class="minus" [disabled]="!allowedEdit">
+                            <mat-icon>
+                                remove
+                            </mat-icon>
+                        </button>
+                    </div>
+                    <input matInput value="{{exercise.reps}}" readonly>
+                </div>
+            
+                    <div id="buttons">
+                        <button mat-raised-button (click)="allowEdit()" >
+                            Edit
+                            <mat-icon matSuffix>
+                                edit
+                            </mat-icon>
+                        </button>
+                    
+                    
+                        <button mat-raised-button color="primary" (click)="save(exercise)" class="save">
+                            Save
+                            <mat-icon matSuffix>
+                                save
+                            </mat-icon>
+                        </button>
+                    </div>
+
+                    <div id="delete">
+                        
+                        <button mat-icon-button color="primary" (click)="deleteExercise(exercise.id!)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+
+                        
+                    </div>
+                    </div>                
+        }    
+    } 
+    @else {
+        <h1>No Exercises To Display</h1>
+    } 
+    
+}
+@else { 
+    <h1>No exercises to display</h1>
+}
+<div class="ExerciseInfo add-exercise" (click)="openDialog()">
+    <mat-icon class="add-icon">add</mat-icon>
+    <h2>Add Exercise</h2>
+</div>
+</body>
+
+
+

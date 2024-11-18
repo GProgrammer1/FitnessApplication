@@ -1,0 +1,20 @@
+<nav class="navbar">
+    <div class="navbar-content">
+        <h1>My Workouts
+            <mat-icon>fitness_center</mat-icon>
+        </h1>
+        
+        <mat-form-field>
+            <mat-icon matPrefix>calendar_today</mat-icon>
+            <input matInput [matDatepicker]="picker"
+             placeholder="Select a date"
+              (dateChange)="ondatechange($event)"
+              [min]="minDate"
+              [value]="minDate"
+              readonly>
+            <mat-datepicker-toggle matSuffix [for]="picker"  ></mat-datepicker-toggle>
+            <mat-datepicker #picker ></mat-datepicker>
+            
+        </mat-form-field>
+    </div>
+</nav>

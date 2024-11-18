@@ -1,0 +1,12 @@
+<mat-card class="confirmation-dialog">
+    <mat-card-content>
+      <p class="dialog-message">Are you sure you want to delete this exercise from your workout?</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <div id="buttons">
+        <button mat-raised-button color="accent" (click)="cancelDelete()">Cancel</button>
+        <button mat-raised-button color="warn" (click)="delete()">Delete</button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+  

@@ -1,0 +1,61 @@
+body { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(../../../public/images/fitness-gym-and-equipment-photography-dn9w2z4r8yd2wi47.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 10px bottom;
+    z-index: -1;
+}
+
+mat-card {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    gap: 30px;
+    height: 80%;
+    box-shadow: 2px 2px 2px 2px  gray;
+    z-index: 1;
+    position: absolute;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+mat-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+mat-form-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+mat-error {
+    margin-left : 0 ; 
+}
+
+button {
+    position: relative;
+    top: 80px; 
+}
+a {
+    color: #1a8cff; /* Brighter blue for hover */
+}
+
+
+
+  

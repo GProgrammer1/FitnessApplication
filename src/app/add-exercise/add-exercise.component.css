@@ -1,0 +1,48 @@
+mat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    
+}
+
+mat-form-field {
+    width: 80%;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+mat-option span {
+    margin-top: 20px;
+    display: block;
+}
+mat-option img {
+    width: 20%;
+    height: 100%;
+    margin-right: 20px;
+    margin-top: 0px;
+    margin-bottom: 0;
+     
+}
+
+mat-option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+mat-option h4 {
+    align-self: center;
+    margin-bottom: 20px;
+}
+mat-card-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,0 +1,44 @@
+.confirmation-dialog {
+    width: 400px; /* Control the dialog width */
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .dialog-message {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  #buttons {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  button {
+    width: 45%;
+  }
+  
+  button.mat-raised-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-transform: none;
+  }
+  
+  button.mat-raised-button[color="warn"] {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  button.mat-raised-button[color="accent"] {
+    background-color: #8bc34a;
+    color: white;
+  }
+  
+  mat-card-content, mat-card-actions {
+    padding: 0;
+  }
+  

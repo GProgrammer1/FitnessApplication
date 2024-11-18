@@ -1,0 +1,55 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title> Add Exercise</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <form [formGroup]="addForm">
+        <mat-form-field appearance="fill" id="exerciseAdder">
+            <mat-label>Choose an exercise: </mat-label>
+            <mat-select [(value)]="selectedValue" formControlName="name" (selectionChange)="signalNameChange()">
+                 
+                <mat-option value="Barbell Press">
+                    <img [src]="'../../../images/Barbell Press.jpeg'" alt="" matPrefix>
+                    <span matSuffix>Barbell Press</span>
+                </mat-option>
+
+                <mat-option value="Dumbbell Press">
+                    <img [src]="'../../../images/Dumbbell Press.jpeg'" alt="" matPrefix>
+                    <span matSuffix>Dumbbell Press</span>
+                </mat-option>
+                      
+                <mat-option value="Chest Flys">
+                    <img src="../../../images/Chest Flys.jpeg" alt="">
+                    <span>Chest Flys</span>
+                </mat-option>
+            </mat-select>
+            @if (addForm.get('name')?.hasError('required')) {
+                <mat-error>
+                Please select an exercise name 
+                </mat-error>
+            }
+            @else if (addForm.get('name')?.hasError('alreadyExists')) {
+                <mat-error>
+                    Exercise already exists in workout
+                </mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Number of sets:</mat-label>
+            <input matInput formControlName="sets" type="number" min="0">
+
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Number of reps:</mat-label>
+            <input matInput formControlName="reps" type="number" min="0">
+        </mat-form-field>
+
+        <button mat-raised-button (click)="addExercise()">
+            Submit
+        </button>
+    </form>
+    </mat-card-content>
+</mat-card>
